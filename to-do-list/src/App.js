@@ -5,7 +5,7 @@ import InputComponent from "./components/InputComponent";
 
 class App extends Component {
   state = {
-    items: [],
+    items: [""],
     showItems: false,
   };
   styles = {
@@ -18,11 +18,11 @@ class App extends Component {
     this.setState({ items: items });
   };
   addItemHandler = () => {
-    let paragraph = document.createElement("p");
-    paragraph.innerHTML = this.state.items;
-    document.body.appendChild(paragraph);
+    let newItem = document.createElement("p");
+    newItem.innerHTML = this.state.items;
+    document.body.appendChild(newItem);
   };
-
+  itemRemover = () => {};
   // -----------EventHandlers <Finish>---------------
   render() {
     return (
@@ -36,7 +36,6 @@ class App extends Component {
         <button type="submit" onClick={this.addItemHandler}>
           Add
         </button>
-       
       </div>
     );
   }
