@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+
+// *********
 
 class InputComponent extends Component {
-  state = {};
-
+  state = this.props.itemEntered;
   render() {
     return (
       <div>
@@ -12,9 +12,10 @@ class InputComponent extends Component {
           placeholder="Type Item Here..."
           onChange={this.props.getItem}
         ></input>
-        <button onClick={this.props.addItem}>Add</button>
-        
+       {/* <p id="item">
        
+       </p> */}
+        
       </div>
     );
   }
