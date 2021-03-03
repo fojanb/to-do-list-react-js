@@ -1,9 +1,8 @@
-// import './App.css';
-import "./index.css";
 import React, { Component } from "react";
-// import ReactDOM from "react-dom";
 import InputComponent from "./components/InputComponent";
-
+import "./App.css";
+import "./index.css";
+// *********************************************
 class App extends Component {
   state = {
     items: "",
@@ -23,23 +22,22 @@ class App extends Component {
     let newItem = document.createElement("div");
     newItem.classList.add("item");
     //Assign value to this div
-    newItem.innerHTML = this.state.items; 
+    newItem.innerHTML = this.state.items;
     //now append it to body in html:
-    document.body.appendChild(newItem);
+    document.getElementById("AppComponentDiv").appendChild(newItem);
     // And also I add an event to this <div class="item" onclick="itemRemover()">
     newItem.addEventListener("click", itemRemover);
     //Adding event handlers
     function itemRemover() {
-      // alert('Hi');
+      // test : alert('Hi');
       newItem.style.display = "none";
     }
   };
   // -----------EventHandlers <Finish>---------------
   render() {
     return (
-      <div>
-        <h2>MY LIST</h2>
-        <p>Add an Item...</p>
+      <div id="AppComponentDiv">
+        <h3 id="AppComponentTitle">My To-Do-List</h3>
         <InputComponent
           getItem={this.getItemHandler}
           itemEntered={this.state.items}
