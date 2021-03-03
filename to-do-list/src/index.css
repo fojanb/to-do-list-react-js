@@ -10,16 +10,27 @@ body {
   font-family: "Potta One", cursive;
   font-size: 2rem;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
 .item {
   display: flex;
   flex-direction: row;
+  flex-grow: unset;
+  font-size: 1.2rem;
   margin-top: 20px;
-  color: #6c6472;
+  color: #5c5661;
+  border: 5px solid #fffeb8;
+  border-radius: 5px;
+  background-color: #d7e3fc;
+  padding-left: 10px;
+}
+.removeBtn {
+  text-align: center;
+  margin-left: 180px;
+  color: #ff595e;
+  font-weight: bolder;
+}
+.item .removeBtn:hover {
+  cursor: pointer;
+  transition: width 2s, height 4s;
 }
 #root {
   display: flex;
