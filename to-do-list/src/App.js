@@ -18,15 +18,22 @@ class App extends Component {
     this.setState({ items: items });
   };
   addItemHandler = () => {
-    // Placing a new item in a <div class="item"></div>
+    // Creating a new <div></div> element in our HTML(document)
     let newItem = document.createElement("div");
+    // Assigning a class to it <div class="item"></div>
     newItem.classList.add("item");
-    //Assign value to this div
-    newItem.innerHTML = this.state.items;
-    //now append it to body in html:
+    //Assign value to it <div class="item">${this.state.items}</div>
+    newItem.innerHTML = "♡ " + this.state.items;
+    //now append it to AppComponentDiv in HTML:
     document.getElementById("AppComponentDiv").appendChild(newItem);
+
+    let removeButton = document.createElement("div");
+    removeButton.classList.add("removeBtn");
+    removeButton.innerHTML = "〤";
+    newItem.appendChild(removeButton);
+
     // And also I add an event to this <div class="item" onclick="itemRemover()">
-    newItem.addEventListener("click", itemRemover);
+    removeButton.addEventListener("click", itemRemover);
     //Adding event handlers
     function itemRemover() {
       // test : alert('Hi');
@@ -37,7 +44,9 @@ class App extends Component {
   render() {
     return (
       <div id="AppComponentDiv">
-        <h3 id="AppComponentTitle">My To-Do-List</h3>
+        <h3 id="AppComponentTitle">
+          <p id="myMove1">✿</p>My To-Do-List<p id="myMove2">✿</p>
+        </h3>
         <InputComponent
           getItem={this.getItemHandler}
           itemEntered={this.state.items}
