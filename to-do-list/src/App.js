@@ -1,11 +1,12 @@
 // import './App.css';
+import "./index.css";
 import React, { Component } from "react";
 // import ReactDOM from "react-dom";
 import InputComponent from "./components/InputComponent";
 
 class App extends Component {
   state = {
-    items: [""],
+    items: "",
     showItems: false,
   };
   styles = {
@@ -18,11 +19,21 @@ class App extends Component {
     this.setState({ items: items });
   };
   addItemHandler = () => {
-    let newItem = document.createElement("p");
-    newItem.innerHTML = this.state.items;
+    // Placing a new item in a <div class="item"></div>
+    let newItem = document.createElement("div");
+    newItem.classList.add("item");
+    //Assign value to this div
+    newItem.innerHTML = this.state.items; 
+    //now append it to body in html:
     document.body.appendChild(newItem);
+    // And also I add an event to this <div class="item" onclick="itemRemover()">
+    newItem.addEventListener("click", itemRemover);
+    //Adding event handlers
+    function itemRemover() {
+      // alert('Hi');
+      newItem.style.display = "none";
+    }
   };
-  itemRemover = () => {};
   // -----------EventHandlers <Finish>---------------
   render() {
     return (
