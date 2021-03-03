@@ -9,7 +9,7 @@ class InputComponent extends Component {
         <input
           id="InputComponentFieldItem"
           type="text"
-          placeholder="Type Item Here..."
+          placeholder="✎ Write Here "
           onChange={this.props.getItem}
         ></input>
       </div>
