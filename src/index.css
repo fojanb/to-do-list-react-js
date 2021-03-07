@@ -1,15 +1,16 @@
 body {
   margin: 100px;
   text-align: center;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; */
   background-color: #d6e3f8;
   font-family: "Potta One", cursive;
   font-size: 2rem;
 }
+
 .item {
   display: flex;
   flex-direction: row;
@@ -39,18 +40,31 @@ body {
   background-color: #e2c6ff;
   width: 400px;
   text-align: center;
+  align-items: center;
   margin: 0 auto;
-  /* background-color: blueviolet; */
   border: 15px solid #b8c0ff;
   border-radius: 10px;
   padding-bottom: 20px;
   box-shadow: 6px 6px rgb(153, 153, 153);
 }
+@media screen and (max-width: 600px) {
+  #root {
+    width: 300px;
+    border-radius: 5px;
+    padding-bottom: 10px;
+    border: 10px solid #b8c0ff;
+    box-shadow: 3px 3px rgb(153, 153, 153);
+  }
+}
 .footer {
   display: flex;
   justify-content: center;
-  position: fixed;
-  bottom: 5px;
-  left: 5px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  color: #5c5661;
   font-size: 14px;
+  position: fixed;
+  left: 0px;
+  bottom: 20px;
 }
