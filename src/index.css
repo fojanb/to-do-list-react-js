@@ -3,7 +3,7 @@ html {
   min-height: 100%;
 }
 body {
-  margin: 100px;
+  margin: 0px;
   text-align: center;
   /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -60,6 +60,7 @@ body {
     box-shadow: 3px 3px rgb(153, 153, 153);
   }
 }
+
 .footer {
   display: flex;
   justify-content: center;
