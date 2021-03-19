@@ -15,7 +15,7 @@ body {
   box-shadow: 5px 5px rgb(233, 232, 232);
   border:5px solid #fdffb6;
 }
-#tasks{
+.tasks{
     display: flex;
     background-color: #ffc6ff;
     padding: 5px;
