@@ -3,13 +3,13 @@ body {
   background-color: #fffffc;
 }
 #wrapper {
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   padding: 20px;
   background-color: #ccc4fc;
   align-items: center;
   width: 300px;
-  height: 300px;
   margin: auto;
   border-radius: 10px;
   box-shadow: 5px 5px rgb(233, 232, 232);
