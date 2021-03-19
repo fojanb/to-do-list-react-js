@@ -6,7 +6,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  background-color: #bdb2ff;
+  background-color: #ccc4fc;
   align-items: center;
   width: 300px;
   height: 300px;
@@ -18,11 +18,11 @@ body {
 .tasks{
     display: flex;
     background-color: #ffc6ff;
-    padding: 5px;
-    margin: auto;
     margin-top: 10px;
+    padding: 8px;
     width: 200px;
     border-radius: 10px;
+    border: 2.5px solid #fdffb6;
 }
 #task{
     border-radius: 10px;
