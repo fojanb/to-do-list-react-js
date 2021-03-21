@@ -16,6 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
     removeButton.innerText = "-";
     // So far : <button class="removeButtonStyle">-</button>
     holder.appendChild(removeButton);
+    removeButton.addEventListener("click", removeItem);
+    function removeItem() {
+      holder.style.display = "none";
+    }
   }
- 
 });
