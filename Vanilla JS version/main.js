@@ -11,11 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("wrapper").appendChild(holder).innerHTML =
       "♡ " + task;
     // ------------------------------------*
-    let btn = document.createElement("button");
-    btn.classList.add("btnStyle");
-    btn.innerText = "-";
-    // So far : <button class="btnStyle">-</button>
-    holder.appendChild(btn);
+    let removeButton = document.createElement("button");
+    removeButton.classList.add("removeButtonStyle");
+    removeButton.innerText = "-";
+    // So far : <button class="removeButtonStyle">-</button>
+    holder.appendChild(removeButton);
   }
  
 });
