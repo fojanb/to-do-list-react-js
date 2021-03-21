@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
     holder.classList.add("task");
     // So far : <div class="tasks"></div>
     // ------------------------------------*
-    document.getElementById("wrapper").appendChild(holder).innerHTML ="♡ "+ task;
+    document.getElementById("wrapper").appendChild(holder).innerHTML =
+      "♡ " + task;
     // ------------------------------------*
     let btn = document.createElement("button");
     btn.classList.add("btnStyle");
@@ -16,5 +17,5 @@ document.addEventListener("DOMContentLoaded", () => {
     // So far : <button class="btnStyle">-</button>
     holder.appendChild(btn);
   }
-
+ 
 });
