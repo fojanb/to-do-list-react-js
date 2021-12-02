@@ -1,0 +1,77 @@
+:root {
+  --bg-purple: #3d405b;
+  --bg-green: #81b29a;
+  --bg-orange: #f2cc8f;
+  --bg-lemon: #186609;
+  --bg-pink: #997d99;
+  --bg-light-orange: #ffd6a5;
+  --bg-salmon: #ffadad;
+  --bg-gray: #ddd;
+}
+body {
+  margin: 50px;
+  background-color: var(--bg-purple);
+  font-family: cursive;
+}
+#wrapper {
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: var(--bg-pink);
+  align-items: center;
+  width: 300px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+#wrapper h3 {
+  color: var(--bg-purple);
+}
+#wrapper h3 span {
+  color: var(--bg-lemon);
+}
+.task {
+  display: flex;
+  background-color: var(--bg-pink);
+  justify-content: space-between;
+  margin-top: 10px;
+  padding: 8px;
+  width: 200px;
+  border-radius: 10px;
+  border: 2px solid var(--bg-lemon);
+}
+#task {
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  padding: 10px;
+  border-bottom: 2px solid var(--bg-lemon);
+}
+#task:focus {
+  background-color: var(--bg-gray);
+  border: none;
+  appearance: none;
+}
+#addButton {
+  background-color: inherit;
+  border-radius: 10px;
+  border: 2px solid var(--bg-lemon);
+  padding: 10px;
+  color: var(--bg-lemon);
+  font-weight: bolder;
+}
+#addButton:hover {
+  cursor: pointer;
+  background-color: var(--bg-green);
+  color: var(--bg-purple);
+}
+.removeButtonStyle {
+  background-color: var(--bg-light-orange);
+  border: none;
+  border-radius: 5px;
+  border: 2px solid var(--bg-lemon);
+  cursor: pointer;
+}
+.removeButtonStyle:hover {
+  background-color: var(--bg-salmon);
+}

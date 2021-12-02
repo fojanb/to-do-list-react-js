@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>To-Do-List with Vanilla JS</title>
-    <link rel="stylesheet" href="styles.css" />
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="wrapper">
-      <h3 style="color: #3d405b;"><span style="color: #d0f4de;">✿&nbsp</span>To-Do-List<span style="color: #caffbf;">&nbsp✿</span></h2>
+      <h3><span>✿&nbsp</span>To-Do-List<span>&nbsp✿</span></h2>
       <div id="form">
-        <input id="task" type="text" placeholder="✎ Type here..." />
-        <button id="addButton" type="submit">＋</button>
+        <input id="task" type="text" placeholder="✎ Type here..." autocomplete="off" required/>
+        <button id="addButton" type="submit">ADD</button>
       </div>
     </div>
+    <script src="main.js"></script>
+
   </body>
 </html>
