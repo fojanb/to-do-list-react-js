@@ -12,7 +12,7 @@ body {
   background-color: var(--bg-purple);
   font-family: cursive;
 }
-#wrapper {
+.wrapper {
   min-height: 50vh;
   display: flex;
   flex-direction: column;
@@ -23,11 +23,13 @@ body {
   margin: 0 auto;
   border-radius: 10px;
 }
-#wrapper h3 {
+.wrapper h3 {
   color: var(--bg-purple);
+  margin: 0 auto;
+  padding: 20px;
 }
-#wrapper h3 span {
-  color: var(--bg-lemon);
+.wrapper h3 span {
+  color: var(--bg-purple);
 }
 #form {
   border-bottom: 2px solid var(--bg-lemon);
