@@ -12,7 +12,7 @@ function addTask() {
   // ------------------------------------*
   let removeButton = document.createElement("button");
   removeButton.classList.add("removeButtonStyle");
-  removeButton.innerText = "-";
+  removeButton.innerText = "DELETE";
   // So far : <button class="removeButtonStyle">-</button>
   holder.appendChild(removeButton);
   removeButton.addEventListener("click", removeItem);

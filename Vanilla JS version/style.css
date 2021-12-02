@@ -2,9 +2,8 @@
   --bg-purple: #3d405b;
   --bg-green: #81b29a;
   --bg-orange: #f2cc8f;
-  --bg-lemon: #186609;
+  --bg-lemon: #62446e;
   --bg-pink: #997d99;
-  --bg-light-orange: #ffd6a5;
   --bg-salmon: #ffadad;
   --bg-gray: #ddd;
 }
@@ -30,6 +29,13 @@ body {
 #wrapper h3 span {
   color: var(--bg-lemon);
 }
+#form {
+  border-bottom: 2px solid var(--bg-lemon);
+}
+::placeholder {
+  color: var(--bg-purple);
+  opacity: 1; /* Firefox */
+}
 .task {
   display: flex;
   background-color: var(--bg-pink);
@@ -41,37 +47,34 @@ body {
   border: 2px solid var(--bg-lemon);
 }
 #task {
-  background-color: transparent;
-  border: none;
+  background: none;
   appearance: none;
+  border: none;
+  outline: none;
   padding: 10px;
-  border-bottom: 2px solid var(--bg-lemon);
 }
-#task:focus {
-  background-color: var(--bg-gray);
-  border: none;
-  appearance: none;
-}
+
 #addButton {
   background-color: inherit;
-  border-radius: 10px;
-  border: 2px solid var(--bg-lemon);
-  padding: 10px;
   color: var(--bg-lemon);
   font-weight: bolder;
+  border: none;
+  appearance: none;
 }
 #addButton:hover {
   cursor: pointer;
-  background-color: var(--bg-green);
-  color: var(--bg-purple);
+  transform: scale(1.1);
 }
 .removeButtonStyle {
-  background-color: var(--bg-light-orange);
+  background-color: inherit;
   border: none;
   border-radius: 5px;
-  border: 2px solid var(--bg-lemon);
   cursor: pointer;
+  appearance: none;
+  font-weight: bold;
+  color: var(--bg-lemon);
 }
 .removeButtonStyle:hover {
-  background-color: var(--bg-salmon);
+  cursor: pointer;
+  transform: scale(1.1);
 }
