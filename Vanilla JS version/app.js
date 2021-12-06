@@ -1,11 +1,11 @@
-const wrapper = document.querySelector(".shopping");
+const shopping = document.querySelector(".shopping");
 const form = document.querySelector("#form");
 const task = document.querySelector("#task");
 task.addEventListener("change", () => {
   let newTask = task.value;
   const holder = document.createElement("div");
   holder.classList.add("task");
-  wrapper.appendChild(holder).innerHTML = newTask;
+  shopping.appendChild(holder).innerText = newTask;
   const removeButton = document.createElement("button");
   removeButton.classList.add("removeButtonStyle");
   removeButton.innerText = "Delete";
