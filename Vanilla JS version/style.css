@@ -1,34 +1,43 @@
-.wrapper {
+body {
+  box-sizing: border-box;
+  background-color: #4a4e69;
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 21.184c.13.357.264.72.402 1.088l.661 1.768C4.653 33.64 6 39.647 6 50c0 10.271-1.222 15.362-4.928 24.629-.383.955-.74 1.869-1.072 2.75v6.225c.73-2.51 1.691-5.139 2.928-8.233C6.722 65.888 8 60.562 8 50c0-10.626-1.397-16.855-5.063-26.66l-.662-1.767C1.352 19.098.601 16.913 0 14.85v6.335zm20 0C17.108 13.258 16 8.077 16 0h2c0 5.744.574 9.951 2 14.85v6.334zm0 56.195c-2.966 7.86-4 13.123-4 22.621h2c0-6.842.542-11.386 2-16.396v-6.225zM6 0c0 8.44 1.21 13.718 4.402 22.272l.661 1.768C14.653 33.64 16 39.647 16 50c0 10.271-1.222 15.362-4.928 24.629C7.278 84.112 6 89.438 6 100h2c0-10.271 1.222-15.362 4.928-24.629C16.722 65.888 18 60.562 18 50c0-10.626-1.397-16.855-5.063-26.66l-.662-1.767C9.16 13.223 8 8.163 8 0H6z' fill='%23fff' fill-rule='nonzero' fill-opacity='.1' opacity='.349'/%3E%3C/svg%3E%0A");
+  font-family: sans-serif;
+}
+.shopping {
   display: grid;
-  grid-template-columns: 1fr, auto;
+  grid-template-columns: repeat(1, 400px);
+  grid-template-rows: repeat(1, 100px);
+  width: 450px;
   background-color: #9a8c98;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
+  margin: 100px auto;
+  padding: 10px 10px 50px 10px;
   border-radius: 10px;
-  color: #000000;
+  color: mintcream;
 }
-.wrapper h3 {
-  margin: 20px auto;
-  color: #ffffff;
+.shopping h3 {
+  text-align: center;
 }
-
 #form {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 #form input {
   background: white;
   appearance: none;
-  border: 2px solid white;
+  border: 4px solid #f2e9e4;
   outline: none;
-  padding: 10px;
+  padding: 8px;
   border-radius: 5px;
+  font-size: large;
+  width: 350px;
 }
 #form input:focus {
-  border: 2px solid #f2e9e4;
+  border: 4px solid #cabeb8;
 }
 .task {
   display: flex;
@@ -39,27 +48,44 @@
   margin-top: 10px;
   padding: 8px;
   width: auto;
-  border-radius: 10px;
-  border: 2px solid #c9ada7;
+  border-radius: 5px;
+  border-bottom: 2px solid #c9ada7;
 }
 
-#addButton {
+.addButton {
   background-color: inherit;
   color: white;
   border: none;
   appearance: none;
+  padding: 14px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: medium;
+
+
 }
-#addButton:hover {
+.addButton:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
 .removeButtonStyle {
-  background-color: inherit;
-  border-radius: 5px;
-  cursor: pointer;
+  background-color: #ac7b84;
+  color: white;
+  border: none;
   appearance: none;
+  padding: 10px;
+  border-radius: 5px;
 }
 .removeButtonStyle:hover {
   cursor: pointer;
   transform: scale(1.05);
+}
+/* ---------------------------- */
+@media screen and (max-width: 600px) {
+  .shopping {
+    grid-template-columns: repeat(1, 200px);
+    grid-template-rows: repeat(1, 50px);
+    width: 250px;
+    padding: 20px 20px 60px 20px;
+  }
 }

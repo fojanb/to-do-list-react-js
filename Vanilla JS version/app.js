@@ -1,4 +1,4 @@
-const wrapper = document.querySelector(".wrapper");
+const wrapper = document.querySelector(".shopping");
 const form = document.querySelector("#form");
 const task = document.querySelector("#task");
 task.addEventListener("change", () => {
