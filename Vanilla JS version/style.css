@@ -18,7 +18,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
 }
 #form input {
   background: white;
@@ -27,6 +26,9 @@
   outline: none;
   padding: 10px;
   border-radius: 5px;
+}
+#form input:focus {
+  border: 2px solid #f2e9e4;
 }
 .task {
   display: flex;
