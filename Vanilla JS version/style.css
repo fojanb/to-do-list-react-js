@@ -4,7 +4,6 @@
   background-color: #9a8c98;
   align-items: center;
   justify-content: center;
-  width: 500px;
   margin: 0 auto;
   border-radius: 10px;
   color: #000000;
@@ -40,6 +39,8 @@ margin-bottom: 20px;
   outline: none;
   padding: 10px;
   border-radius: 5px;
+  overflow: visible;
+
 }
 
 #addButton {
