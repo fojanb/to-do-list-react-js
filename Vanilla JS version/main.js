@@ -8,7 +8,7 @@ task.addEventListener("change", () => {
   wrapper.appendChild(holder).innerHTML = newTask;
   const removeButton = document.createElement("button");
   removeButton.classList.add("removeButtonStyle");
-  removeButton.innerText = "DELETE";
+  removeButton.innerText = "Delete";
   holder.appendChild(removeButton);
   removeButton.addEventListener("click", () => {
     holder.style.display = "none";
