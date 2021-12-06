@@ -1,6 +1,6 @@
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(1fr,auto);
+  grid-template-columns: repeat(1fr, auto);
   background-color: #9a8c98;
   align-items: center;
   justify-content: center;
@@ -14,11 +14,19 @@
 }
 
 #form {
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+#form input {
+  background: white;
+  appearance: none;
+  border: 2px solid white;
+  outline: none;
+  padding: 10px;
+  border-radius: 5px;
 }
 .task {
   display: flex;
@@ -31,16 +39,6 @@ margin-bottom: 20px;
   width: auto;
   border-radius: 10px;
   border: 2px solid #c9ada7;
-}
-#task {
-  background: white;
-  appearance: none;
-  border: 2px solid white;
-  outline: none;
-  padding: 10px;
-  border-radius: 5px;
-  overflow: visible;
-
 }
 
 #addButton {
@@ -58,7 +56,6 @@ margin-bottom: 20px;
   border-radius: 5px;
   cursor: pointer;
   appearance: none;
-
 }
 .removeButtonStyle:hover {
   cursor: pointer;
