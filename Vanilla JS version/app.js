@@ -22,6 +22,7 @@ const displayTask = () => {
     )
     .join("");
   taskList.innerHTML = newTask;
+  shopping.appendChild(taskList)
 };
 const submitHandler = (e) => {
   // Remember that e.currentTarget = form

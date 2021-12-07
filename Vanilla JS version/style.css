@@ -7,7 +7,6 @@ body {
 .shopping {
   display: grid;
   grid-template-columns: repeat(1, 400px);
-  grid-template-rows: repeat(3, 100px);
   width: 450px;
   height: auto;
   background-color: #9a8c98;
