@@ -9,17 +9,18 @@
   </head>
   <body>
     <div class="shopping">
-      <h3>To Do List</h3>
+      <h1>To Do List</h1>
       <form type="submit" id="form">
         <input
-          id="task"
           type="text"
+          name="task"
           placeholder="Type here..."
           autocomplete="off"
           required
         />
-        <button class="addButton" type="submit">Add</button>
+        <button type="submit" class="addButton" aria-label="Add Button">Add</button>
       </form>
+      <ul class="taskList"></ul>
     </div>
     <script src="app.js"></script>
   </body>

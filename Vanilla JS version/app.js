@@ -1,20 +1,39 @@
 const shopping = document.querySelector(".shopping");
 const form = document.querySelector("#form");
-const task = document.querySelector("#task");
-task.addEventListener("change", () => {
-  let newTask = task.value;
-  const holder = document.createElement("div");
-  holder.classList.add("task");
-  shopping.appendChild(holder).innerText = newTask;
-  const removeButton = document.createElement("button");
-  removeButton.classList.add("removeButtonStyle");
-  removeButton.innerText = "Delete";
-  holder.appendChild(removeButton);
-  removeButton.addEventListener("click", () => {
-    holder.style.display = "none";
-  });
-});
-form.addEventListener("submit", (e) => {
+const taskList = document.querySelector(".taskList");
+let toDoList = []; //This array holds our state
+
+const displayTask = () => {
+  // First approach :
+  // const list = document.createElement("li");
+  // list.innerText = newTask;
+  // taskList.appendChild(list);
+  // Second approach :
+  let newTask = toDoList
+    .map(
+      (task) =>
+        `<li class="task">
+            <div>
+                <input type="checkbox" id=${task.id}/>
+                <span>${task.title}</span>
+            </div>
+            <button>Delete</button>
+        </li>`
+    )
+    .join("");
+  taskList.innerHTML = newTask;
+};
+const submitHandler = (e) => {
+  // Remember that e.currentTarget = form
   e.preventDefault();
-  task.value = "";
-});
+  const task = {
+    title: e.currentTarget.task.value,
+    id: Date.now(),
+    isDone: false,
+  };
+  toDoList.push(task);
+  e.currentTarget.task.value = "";
+  displayTask();
+};
+
+form.addEventListener("submit", submitHandler);
