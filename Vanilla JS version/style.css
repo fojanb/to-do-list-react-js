@@ -19,25 +19,28 @@ body {
 }
 .shopping h1 {
   text-align: center;
+  color: #ecdad1;
 }
 #form {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 #form input {
-  background: white;
+  background: none;
   appearance: none;
-  border: 4px solid #f2e9e4;
+  border: none;
   outline: none;
+  border-bottom: 2px solid #cabeb8;
   padding: 8px;
-  border-radius: 5px;
   font-size: large;
-  width: 350px;
+  width: 300px;
+  height: 20px;
+
 }
 #form input:focus {
-  border: 4px solid #cabeb8;
+  border: 2px solid #cabeb8;
 }
 .taskList {
   display: flex;
@@ -63,33 +66,44 @@ body {
 
 .addButton {
   background-color: inherit;
-  color: white;
-  border: none;
-  appearance: none;
-  padding: 14px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: medium;
-  float: left;
-}
-.addButton:hover {
-  cursor: pointer;
-  transform: scale(1.05);
-}
-.deleteBtn {
-  background-color: #ac7b84;
-  color: white;
+  color: #4a4e69;
+  background-color: #cabeb8;
   border: none;
   appearance: none;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: medium;
+  float: left;
+  transition: ease-in-out 0.3s;
+}
+.addButton:hover {
+  cursor: pointer;
+  color: #cabeb8;
+  background-color: #4a4e69;
+
+  transition: ease-in-out 0.3s;
+}
+.deleteBtn {
+  background-color: #4a4e69;
+  color: #cabeb8;
+  border: none;
+  appearance: none;
+  padding: 10px;
+  font-size: large;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   position: absolute;
   right: 4px;
   top: 0;
+  transition: ease-in-out 0.3s;
 }
 .deleteBtn:hover {
+  background-color: #cabeb8;
+  color: #4a4e69;
   cursor: pointer;
-  transform: scale(1.05);
+  transition: ease-in-out 0.4s;
 }
 .shoppingCart {
   display: flex;
@@ -97,14 +111,19 @@ body {
   align-self: center;
   margin: 0 auto;
   text-align: center;
-  padding: 20px;
+  padding: 10px;
+  margin-top: 40px;
+  background-color: #cabeb8;
   color: #4a4e69;
-  transition: ease-in-out 0.5s;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: ease-in-out 0.4s;
 }
 .shoppingCart:hover {
+  background-color: #4a4e69;
   color: #cabeb8;
   cursor: pointer;
-  transition: ease-in-out 0.5s;
+  transition: ease-in-out 0.4s;
 }
 
 /* ---------------------------- */

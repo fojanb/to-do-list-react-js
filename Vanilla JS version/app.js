@@ -33,11 +33,11 @@ function displayTask() {
   taskList.innerHTML = newTask;
   shopping.appendChild(taskList);
 }
-function saveTasks(){
+function saveTasks() {
   // Remember that server only understand strings:
   localStorage.setItem("myTasks", JSON.stringify(toDoList));
-};
-function submitHandler(e){
+}
+function submitHandler(e) {
   // Remember that e.currentTarget is our form
   e.preventDefault();
   const task = {
@@ -49,12 +49,14 @@ function submitHandler(e){
   e.currentTarget.task.value = "";
   saveTasks();
   displayTask();
-};
-function displayTaskHistory(){
-
+}
+function displayTaskHistory() {
+  if (toDoList.length == 0) {
+    alert("Your tasks history is empty");
+    return;
+  }
   fetchTasks();
-
 }
 
 form.addEventListener("submit", submitHandler);
-shoppingCart.addEventListener("click",displayTaskHistory)
+shoppingCart.addEventListener("click", displayTaskHistory);
