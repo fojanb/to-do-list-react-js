@@ -8,7 +8,6 @@ function fetchTasks() {
   if (!currentTasks) {
     return;
   }
-  console.log(currentTasks);
   toDoList.push(...currentTasks);
   displayTask();
 }
@@ -59,14 +58,12 @@ function displayTaskHistory() {
 }
 function deleteTask(e) {
   if (e.target.matches("button")) {
-    // console.log(`Task with id = ${e.target.id} deleted`)
     let target = toDoList.findIndex((task) => task.id == e.target.id);
     toDoList.splice(target, 1);
     saveTasks();
     displayTask();
   }
 }
-
 form.addEventListener("submit", submitHandler);
 shoppingCart.addEventListener("click", displayTaskHistory);
 taskList.addEventListener("click", deleteTask);
