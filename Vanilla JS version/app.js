@@ -26,7 +26,7 @@ function displayTask() {
                 <input type="checkbox" id=${task.id}/>
                 <span>${task.title}</span>
             </div>
-            <button type="submit" aria-label="Delete Button" class="deleteBtn">\u00D7</button>
+            <button type="submit" id=${task.id} aria-label="Delete Button" class="deleteBtn">\u00D7</button>
         </li>`
     )
     .join("");
@@ -51,12 +51,22 @@ function submitHandler(e) {
   displayTask();
 }
 function displayTaskHistory() {
-  if (toDoList.length == 0) {
-    alert("Your tasks history is empty");
-    return;
-  }
+  // if (toDoList.length == 0) {
+  //   alert("Your tasks history is empty");
+  //   return;
+  // }
   fetchTasks();
+}
+function deleteTask(e) {
+  if (e.target.matches("button")) {
+    // console.log(`Task with id = ${e.target.id} deleted`)
+    let target = toDoList.findIndex((task) => task.id == e.target.id);
+    toDoList.splice(target, 1);
+    saveTasks();
+    displayTask();
+  }
 }
 
 form.addEventListener("submit", submitHandler);
 shoppingCart.addEventListener("click", displayTaskHistory);
+taskList.addEventListener("click", deleteTask);
