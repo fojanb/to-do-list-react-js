@@ -42,22 +42,25 @@ body {
 .taskList {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
   list-style: none;
-  margin: 0 auto;
-  background-color: rgb(126, 115, 20);
   height: auto;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 30px 0;
+  overflow-x: auto;
+  width: 400px;
+  
 }
-.task {
+.taskList li {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  text-align: left;
-  margin: 50px auto;
-  border-bottom: 1px solid #7a6b78;
+  margin-bottom: 2rem;
+  width: 400px;
+  position: relative;
+}
+.taskList li div{
+ padding-right: 100px;
+ 
 }
 
 .addButton {
@@ -69,20 +72,24 @@ body {
   border-radius: 5px;
   font-weight: bold;
   font-size: medium;
+  float: left;
 }
 .addButton:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
-.removeButtonStyle {
+.deleteBtn {
   background-color: #ac7b84;
   color: white;
   border: none;
   appearance: none;
   padding: 10px;
   border-radius: 5px;
+  position: absolute;
+  right: 4px;
+  top: 0;
 }
-.removeButtonStyle:hover {
+.deleteBtn:hover {
   cursor: pointer;
   transform: scale(1.05);
 }

@@ -12,12 +12,12 @@ const displayTask = () => {
   let newTask = toDoList
     .map(
       (task) =>
-        `<li class="task">
+        `<li>
             <div>
                 <input type="checkbox" id=${task.id}/>
                 <span>${task.title}</span>
             </div>
-            <button>Delete</button>
+            <button type="submit" aria-label="Delete Button" class="deleteBtn">\u00D7</button>
         </li>`
     )
     .join("");
