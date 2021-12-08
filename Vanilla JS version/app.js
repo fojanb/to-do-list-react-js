@@ -57,6 +57,7 @@ function displayTaskHistory() {
   fetchTasks();
 }
 function deleteTask(e) {
+  // "Delegation" is happening here.
   if (e.target.matches("button")) {
     let target = toDoList.findIndex((task) => task.id == e.target.id);
     toDoList.splice(target, 1);
