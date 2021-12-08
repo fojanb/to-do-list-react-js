@@ -1,6 +1,7 @@
 const shopping = document.querySelector(".shopping");
 const form = document.querySelector("#form");
 const taskList = document.querySelector(".taskList");
+const shoppingCart = document.querySelector(".shoppingCart");
 let toDoList = []; //This array holds our state
 function fetchTasks() {
   let currentTasks = JSON.parse(localStorage.getItem("myTasks"));
@@ -11,7 +12,6 @@ function fetchTasks() {
   toDoList.push(...currentTasks);
   displayTask();
 }
-fetchTasks();
 function displayTask() {
   // First approach :
   // const list = document.createElement("li");
@@ -50,5 +50,11 @@ function submitHandler(e){
   saveTasks();
   displayTask();
 };
+function displayTaskHistory(){
+
+  fetchTasks();
+
+}
 
 form.addEventListener("submit", submitHandler);
+shoppingCart.addEventListener("click",displayTaskHistory)
