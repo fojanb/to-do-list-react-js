@@ -2,8 +2,17 @@ const shopping = document.querySelector(".shopping");
 const form = document.querySelector("#form");
 const taskList = document.querySelector(".taskList");
 let toDoList = []; //This array holds our state
-
-const displayTask = () => {
+function fetchTasks() {
+  let currentTasks = JSON.parse(localStorage.getItem("myTasks"));
+  if (!currentTasks) {
+    return;
+  }
+  console.log(currentTasks);
+  toDoList.push(...currentTasks);
+  displayTask();
+}
+fetchTasks();
+function displayTask() {
   // First approach :
   // const list = document.createElement("li");
   // list.innerText = newTask;
@@ -22,10 +31,14 @@ const displayTask = () => {
     )
     .join("");
   taskList.innerHTML = newTask;
-  shopping.appendChild(taskList)
+  shopping.appendChild(taskList);
+}
+function saveTasks(){
+  // Remember that server only understand strings:
+  localStorage.setItem("myTasks", JSON.stringify(toDoList));
 };
-const submitHandler = (e) => {
-  // Remember that e.currentTarget = form
+function submitHandler(e){
+  // Remember that e.currentTarget is our form
   e.preventDefault();
   const task = {
     title: e.currentTarget.task.value,
@@ -34,6 +47,7 @@ const submitHandler = (e) => {
   };
   toDoList.push(task);
   e.currentTarget.task.value = "";
+  saveTasks();
   displayTask();
 };
 
