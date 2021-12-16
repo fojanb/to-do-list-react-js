@@ -2,6 +2,9 @@
   "folders": [
     {
       "path": ".."
+    },
+    {
+      "path": "..\\..\\to-do-list-vanilla-js"
     }
   ]
 }

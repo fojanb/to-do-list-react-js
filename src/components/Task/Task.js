@@ -3,7 +3,11 @@ const Task = (props) => {
   let { task } = props;
   return (
     <div className="flex items-left">
-      <p>{task}</p>
+      <ul>
+        <li className="flex flex-row border border-greeny rounded-lg">
+          {task}
+        </li>
+      </ul>
     </div>
   );
 };
