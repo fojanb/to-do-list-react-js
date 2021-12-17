@@ -3,11 +3,15 @@ import Form from "../components/Form/Form";
 
 const App = () => {
   const [task, setTask] = useState("");
+  const save = (IsTask) => {
+    localStorage.setItem("list", JSON.stringify(IsTask));
+    return;
+  };
   const submitHandler = (e) => {
     e.preventDefault();
     let newTask = e.currentTarget.task.value;
     setTask(newTask);
-    localStorage.setItem("list", JSON.stringify(newTask));
+    save(newTask);
     e.currentTarget.task.value = "";
   };
   return (
