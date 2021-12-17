@@ -1,6 +1,9 @@
 import React from "react";
 import Task from "../Task/Task";
 const Form = (props) => {
+  const buttonHandler = () =>{
+    console.log("added")
+  }
   return (
     <div className="grid gap-10">
       <form
@@ -16,7 +19,7 @@ const Form = (props) => {
           autoComplete="off"
           required
         ></input>
-        <button type="submit" aria-label="Add Button" className="flex pl-5">
+        <button type="submit" onClick={buttonHandler} aria-label="Add Button" className="flex pl-5">
           Add
         </button>
       </form>
