@@ -2,16 +2,22 @@ import { useState } from "react";
 import Form from "../components/Form/Form";
 
 const App = () => {
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState([]);
   const save = (IsTask) => {
-    localStorage.setItem("list", JSON.stringify(IsTask));
+    localStorage.setItem("list", IsTask);
     return;
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    let newTask = e.currentTarget.task.value;
-    setTask(newTask);
-    save(newTask);
+    /* Is newTask an object? If so you can't just pass it as a child, 
+    you need to stringify it if you want to see the whole object, 
+    or render individual properties*/
+    let newTask = {
+      id: Date.now(),
+      title: e.currentTarget.task.value,
+    };
+    setTask((prevTask) => [...prevTask, JSON.stringify(newTask)]);
+    save(JSON.stringify(newTask));
     e.currentTarget.task.value = "";
   };
   return (

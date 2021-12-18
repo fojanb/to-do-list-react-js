@@ -2,7 +2,7 @@ import React from "react";
 import Task from "../Task/Task";
 const Form = (props) => {
   const buttonHandler = () =>{
-    console.log("added")
+    console.log(props)
   }
   return (
     <div className="grid gap-10">
