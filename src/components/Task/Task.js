@@ -10,14 +10,14 @@ const Task = (props) => {
         {taskList !== undefined
           ? taskList.map((item, index) => (
               <li
-                className="flex flex-row justtify-center items-center border border-greeny rounded-lg w-60 mb-12 p-8"
+                className="flex flex-row justtify-center items-center relative border border-greeny rounded-lg w-60 mb-12 p-8"
                 key={index}
               >
                 <div className="flex flex-row justify-center items-center">
                   <input type="checkbox" className="m-0 m-auto"/>
                   <span className="pl-1 m-0 m-auto">{item.title}</span>
                 </div>
-                <button className="relative top-0 left-32">&times;</button>
+                <button className="flex absolute top-8 left-52 m-0 m-auto justtify-center items-center">&times;</button>
               </li>
             ))
           : null}
