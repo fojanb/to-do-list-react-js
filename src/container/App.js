@@ -5,7 +5,6 @@ const App = () => {
   const [task, setTask] = useState([]);
   const save = (IsNewTask) => {
     localStorage.setItem("list", IsNewTask);
-    return;
   };
   const submitHandler = (e) => {
     e.preventDefault();

@@ -6,8 +6,8 @@ const Task = (props) => {
   console.log("Parsed State:",taskList);
   const statusHandler = (e) => {
     let targetTask = taskList.find((item) => item.id === e.currentTarget.id);
-    targetTask.isDone=!targetTask.isDone;
-    localStorage.setItem("list",JSON.stringify(taskList))
+    targetTask.isDone = !(targetTask.isDone);
+    localStorage.setItem("list", JSON.stringify(taskList));
   };
   return (
     <div className="flex items-left">
