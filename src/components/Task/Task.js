@@ -17,6 +17,7 @@ const Task = (props) => {
                   <input type="checkbox" className="m-0 m-auto"/>
                   <span className="pl-1 m-0 m-auto">{item.title}</span>
                 </div>
+                <button className="relative top-0 left-32">&times;</button>
               </li>
             ))
           : null}
