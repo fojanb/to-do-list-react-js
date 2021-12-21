@@ -15,6 +15,7 @@ const App = () => {
     let newTask = {
       id: `${Date.now()}`,
       title: `${e.currentTarget.task.value}`,
+      isDone : false,
     };
     setTask((prevTask) => [...prevTask, JSON.stringify(newTask)]);
     save(JSON.stringify(newTask));
