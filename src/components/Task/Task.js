@@ -1,9 +1,9 @@
 import React from "react";
 const Task = (props) => {
   let { task } = props;
-  // console.log(task);
+  // console.log("Stringified State:",task);
   const taskList = task.map((item) => JSON.parse(item));
-  // console.log(taskList)
+  // console.log("Parsed State:",taskList)
   return (
     <div className="flex items-left">
       <ul>
