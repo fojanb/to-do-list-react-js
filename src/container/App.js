@@ -13,8 +13,8 @@ const App = () => {
     you need to stringify it if you want to see the whole object, 
     or render individual properties*/
     let newTask = {
-      id: Date.now(),
-      title: e.currentTarget.task.value,
+      id: `${Date.now()}`,
+      title: `${e.currentTarget.task.value}`,
     };
     setTask((prevTask) => [...prevTask, JSON.stringify(newTask)]);
     save(JSON.stringify(newTask));
