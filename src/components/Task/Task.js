@@ -3,11 +3,17 @@ const Task = (props) => {
   let { task } = props;
   // console.log("Stringified State:",task);
   const taskList = task.map((item) => JSON.parse(item));
-  console.log("Parsed State:",taskList);
+  console.log("Parsed State:", taskList);
   const statusHandler = (e) => {
     let targetTask = taskList.find((item) => item.id === e.currentTarget.id);
-    targetTask.isDone = !(targetTask.isDone);
+    targetTask.isDone = !targetTask.isDone;
     localStorage.setItem("list", JSON.stringify(taskList));
+  };
+  const deleteHandler = (e) => {
+    if (e.target.matches("button")) {
+      console.log("deleteing");
+      
+    }
   };
   return (
     <div className="flex items-left">
@@ -17,6 +23,7 @@ const Task = (props) => {
               <li
                 className="flex flex-row justtify-center items-center relative border border-greeny rounded-lg w-60 mb-12 p-8"
                 key={index}
+                onClick={(e) => deleteHandler(e)}
               >
                 <div className="flex flex-row justify-center items-center">
                   <input
