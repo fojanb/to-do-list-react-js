@@ -5,7 +5,7 @@ module.exports = {
     extend: {
       backgroundColor: {
         main: "#2d333b",
-        fbg:"rgba(96, 157, 159, 0.158)"
+        fbg:"rgba(96, 137, 159, 0.158)"
       },
       textColor: {
         light: "#adbac7",

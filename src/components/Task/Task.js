@@ -12,7 +12,6 @@ const Task = (props) => {
   const deleteHandler = (e) => {
     if (e.target.matches("button")) {
       console.log("deleteing");
-      
     }
   };
   return (
