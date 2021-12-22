@@ -21,7 +21,3 @@ module.exports = {
   plugins: [],
 };
 
-/*  title_color: "f4cd7c",
-icon_color: "73d0ff",
-text_color: "c7c8c2",
-bg_color: "1f2430",*/
