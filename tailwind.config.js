@@ -4,14 +4,14 @@ module.exports = {
   theme: {
     extend: {
       backgroundColor: {
-        main: "hsl(182, 25%, 50%, 0.1)",
+        main: "#2d333b",
         fbg:"rgba(96, 157, 159, 0.158)"
       },
       textColor: {
-        light: "#b1a8a3",
+        light: "#adbac7",
       },
       colors: {
-        greeny: "#2a9d8f",
+        greeny: "#277da1",
       },
     },
   },
