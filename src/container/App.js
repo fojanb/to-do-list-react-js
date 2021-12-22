@@ -22,7 +22,7 @@ const App = () => {
   };
   return (
     <div className="grid grid-col gap-6 justify-center items-center text-center text-light mt-32 m-auto font-bold bg-main h-auto pb-32 pt-12 rounded-lg lg:w-1/3">
-      <h1 className="text-2xl font-bolder">To Do List</h1>
+      <h1 className="text-2xl font-bolder text-greeny">To Do List</h1>
       <Form submit={submitHandler} data={task} />
     </div>
   );
