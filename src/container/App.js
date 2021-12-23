@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useEffect,useState } from "react";
 import Form from "../components/Form/Form";
 
 const App = () => {
   const [task, setTask] = useState([]);
-  const save = (IsNewTask) => {
-    localStorage.setItem("list", IsNewTask);
-  };
+  
+  useEffect(()=>{
+    localStorage.setItem("list", JSON.stringify(task));
+
+  },[task]);
+
   const submitHandler = (e) => {
     e.preventDefault();
     /* Is newTask an object? If so you can't just pass it as a child, 
@@ -17,7 +20,7 @@ const App = () => {
       isDone : false,
     };
     setTask((prevTask) => [...prevTask, JSON.stringify(newTask)]);
-    save(JSON.stringify(newTask));
+    // save(JSON.stringify(newTask));
     e.currentTarget.task.value = "";
   };
   return (

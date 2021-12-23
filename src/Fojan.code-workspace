@@ -9,5 +9,9 @@
     {
       "path": "C:\\Users\\fozha\\OneDrive\\Desktop\\Ali"
     }
-  ]
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "quiz-app",
+    "git.ignoreLimitWarning": true
+  }
 }
