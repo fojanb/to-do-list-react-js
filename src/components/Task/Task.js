@@ -8,6 +8,7 @@ const Task = (props) => {
     let targetTask = taskList.find((item) => item.id === e.currentTarget.id);
     targetTask.isDone = !targetTask.isDone;
     localStorage.setItem("list", JSON.stringify(taskList));
+  
   };
   const deleteHandler = (e) => {
     if (e.target.matches("button")) {

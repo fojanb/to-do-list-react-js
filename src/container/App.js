@@ -1,13 +1,11 @@
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import Form from "../components/Form/Form";
 
 const App = () => {
   const [task, setTask] = useState([]);
-  
-  useEffect(()=>{
+  useEffect(() => {
     localStorage.setItem("list", JSON.stringify(task));
-
-  },[task]);
+  }, [task]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -17,10 +15,9 @@ const App = () => {
     let newTask = {
       id: `${Date.now()}`,
       title: `${e.currentTarget.task.value}`,
-      isDone : false,
+      isDone: false,
     };
     setTask((prevTask) => [...prevTask, JSON.stringify(newTask)]);
-    // save(JSON.stringify(newTask));
     e.currentTarget.task.value = "";
   };
   return (
