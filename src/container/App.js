@@ -6,17 +6,16 @@ const App = () => {
   useEffect(() => {
     localStorage.setItem("list", JSON.stringify(task));
   }, [task]);
-
   const submitHandler = (e) => {
     e.preventDefault();
-    /* Is newTask an object? If so you can't just pass it as a child, 
-    you need to stringify it if you want to see the whole object, 
-    or render individual properties*/
     let newTask = {
       id: `${Date.now()}`,
       title: `${e.currentTarget.task.value}`,
       isDone: false,
     };
+    /* Is newTask an object? If so you can't just pass it as a child, 
+    you need to "stringify" it if you want to see the whole object, 
+    or render individual properties*/
     setTask((prevTask) => [...prevTask, JSON.stringify(newTask)]);
     e.currentTarget.task.value = "";
   };

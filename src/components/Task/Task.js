@@ -1,14 +1,14 @@
 import React from "react";
+
 const Task = (props) => {
   let { task } = props;
   // console.log("Stringified State:",task);
   const taskList = task.map((item) => JSON.parse(item));
-  console.log("Parsed State:", taskList);
+  // console.log("Parsed State:", taskList);
   const statusHandler = (e) => {
     let targetTask = taskList.find((item) => item.id === e.currentTarget.id);
     targetTask.isDone = !targetTask.isDone;
     localStorage.setItem("list", JSON.stringify(taskList));
-  
   };
   const deleteHandler = (e) => {
     if (e.target.matches("button")) {
