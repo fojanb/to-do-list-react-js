@@ -21,7 +21,7 @@ const Form = (props) => {
           Add
         </button>
       </form>
-      <Task task={props.data} />
+      <Task task={props.data} onClick={props.updater} />
     </div>
   );
 };

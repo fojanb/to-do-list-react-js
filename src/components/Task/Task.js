@@ -1,9 +1,9 @@
 import React from "react";
 
 const Task = (props) => {
-  let { task } = props;
+  let { task, onClick } = props;
   // console.log("Stringified State:",task);
-  const taskList = task.map((item) => JSON.parse(item));
+  let taskList = task.map((item) => JSON.parse(item));
   // console.log("Parsed State:", taskList);
   const statusHandler = (e) => {
     let targetTask = taskList.find((item) => item.id === e.currentTarget.id);
@@ -25,7 +25,10 @@ const Task = (props) => {
                 key={index}
                 onClick={(e) => deleteHandler(e)}
               >
-                <div className="flex flex-row justify-center items-center">
+                <div
+                  className="flex flex-row justify-center items-center"
+                  onClick={() => onClick(item)}
+                >
                   <input
                     type="checkbox"
                     id={item.id}
