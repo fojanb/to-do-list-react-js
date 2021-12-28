@@ -1,31 +1,82 @@
 import { useEffect, useState } from "react";
-import Form from "../components/Form/Form";
 
 const App = () => {
-  const [task, setTask] = useState([]);
+  // -------------------------------------------------------
+  const [tasks, setTasks] = useState([]);
+  const [newTask, setNewTask] = useState("");
+  // -------------------------------------------------------
+  const addTask = (task) => setTasks([...tasks, task]);
+  // -------------------------------------------------------
   useEffect(() => {
-    localStorage.setItem("list", JSON.stringify(task));
-  }, [task]);
+    localStorage.setItem("list", JSON.stringify(tasks));
+  }, [tasks]);
+  // -------------------------------------------------------
+
   const submitHandler = (e) => {
     e.preventDefault();
-    let newTask = {
-      id: `${Date.now()}`,
-      title: `${e.currentTarget.task.value}`,
+    // newTask = e.currentTarget.value
+    if (!newTask) {
+      return;
+    }
+    addTask({
+      title: newTask,
+      id: Date.now(),
       isDone: false,
-    };
-    /* Is newTask an object? If so you can't just pass it as a child, 
-    you need to "stringify" it if you want to see the whole object, 
-    or render individual properties*/
-    setTask((prevTask) => [...prevTask, JSON.stringify(newTask)]);
-    e.currentTarget.task.value = "";
+    });
+    setNewTask("");
   };
-  const updatingTask = (item) => {
-    console.log(`Task is getting updated > ${item}`);
-  };
+  // const updatingTask = (item) => {
+  //   console.log(`Task is getting updated > ${item}`);
+  // };
   return (
     <div className="grid grid-col gap-6 justify-center items-center text-center text-light mt-32 m-auto font-bold bg-main h-auto pb-32 pt-12 rounded-lg lg:w-1/3">
       <h1 className="text-2xl font-bolder text-greeny">To Do List</h1>
-      <Form submit={submitHandler} data={task} updater={updatingTask} />
+      <div className="grid gap-10">
+        <form
+          type="submit"
+          onSubmit={(e) => submitHandler(e)}
+          className="flex flex-row items-center justify-between m-0 m-auto"
+        >
+          <input
+            className="flex w-full p-2 appearance-none outline-none bg-transparent border-b border-greeny focus:outline-none focus:bg-fbg"
+            name="task"
+            value={newTask}
+            type="text"
+            onChange={(e) => setNewTask(e.currentTarget.value)}
+            placeholder="Type Here..."
+            autoComplete="off"
+            required
+          ></input>
+          <button type="submit" aria-label="Add Button" className="flex pl-5">
+            Add
+          </button>
+        </form>
+        {/* Task */}
+        <div className="flex items-left">
+          <ul>
+            {tasks !== undefined
+              ? tasks.map((item, index) => (
+                  <li
+                    className="flex flex-row justtify-center items-center relative border border-greeny rounded-lg w-60 mb-12 p-8"
+                    key={index}
+                  >
+                    <div className="flex flex-row justify-center items-center">
+                      <input
+                        type="checkbox"
+                        id={item.id}
+                        className="m-0 m-auto"
+                      />
+                      <span className="pl-1 m-0 m-auto">{item.title}</span>
+                    </div>
+                    <button className="flex absolute top-8 left-52 m-0 m-auto justtify-center items-center">
+                      &times;
+                    </button>
+                  </li>
+                ))
+              : null}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
