@@ -7,6 +7,7 @@ const App = () => {
   const [newTask, setNewTask] = useState("");
   // -------------------------------------------------------
   useEffect(() => {
+    // In order to save our data in local storage, we must stringify them first:
     localStorage.setItem("list", JSON.stringify(tasks));
   }, [tasks]);
   // -------------------------------------------------------
