@@ -2,6 +2,10 @@ import React from "react";
 
 const Task = (props) => {
   let { data } = props;
+  const deleteTask = (e) => {
+    console.log(data);
+   
+  }
   return (
     <div className="flex items-left">
       <ul>
@@ -12,10 +16,10 @@ const Task = (props) => {
                 key={index}
               >
                 <div className="flex flex-row justify-center items-center">
-                  <input type="checkbox" id={task.id} className="m-0 m-auto" />
+                  <input type="checkbox" className="m-0 m-auto" />
                   <span className="pl-1 m-0 m-auto">{task.title}</span>
                 </div>
-                <button className="flex absolute top-8 left-52 m-0 m-auto justtify-center items-center">
+                <button onClick={(e) => deleteTask(e)} id={task.id} className="flex absolute top-8 left-52 m-0 m-auto justtify-center items-center">
                   &times;
                 </button>
               </li>
