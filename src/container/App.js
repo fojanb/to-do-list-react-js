@@ -13,7 +13,7 @@ const App = () => {
   // -------------------------------------------------------
   const submitHandler = (e) => {
     e.preventDefault();
-    // In case you wondering : newTask = e.currentTarget.value
+    // In case if you wondering : newTask = e.currentTarget.value
     if (!newTask) {
       return;
     }
@@ -48,7 +48,7 @@ const App = () => {
             Add
           </button>
         </form>
-        <Task data={tasks} />
+        <Task data={tasks}/>
       </div>
     </div>
   );

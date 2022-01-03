@@ -3,9 +3,12 @@ import React from "react";
 const Task = (props) => {
   let { data } = props;
   const deleteTask = (e) => {
+    const parent = e.currentTarget.parentElement;
+    parent.style.display = "none";
+    const target = data.findIndex((task) => task.id === e.currentTarget.id);
+    data.splice(target, 1);
     console.log(data);
-   
-  }
+  };
   return (
     <div className="flex items-left">
       <ul>
@@ -19,7 +22,11 @@ const Task = (props) => {
                   <input type="checkbox" className="m-0 m-auto" />
                   <span className="pl-1 m-0 m-auto">{task.title}</span>
                 </div>
-                <button onClick={(e) => deleteTask(e)} id={task.id} className="flex absolute top-8 left-52 m-0 m-auto justtify-center items-center">
+                <button
+                  onClick={(e) => deleteTask(e)}
+                  id={task.id}
+                  className="flex absolute top-8 left-52 m-0 m-auto justtify-center items-center"
+                >
                   &times;
                 </button>
               </li>
