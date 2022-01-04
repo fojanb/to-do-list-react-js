@@ -3,9 +3,10 @@ import Task from "../Task/Task";
 // ---------------------------------------------------------
 const App = () => {
   // -------------------------------------------------------
+  // const [tasks, setTasks] = useState([]);
   const [tasks, setTasks] = useState(() => {
-    // getting stored value
-    const saved = localStorage.getItem("list");
+    // Getting stored value
+    const saved = localStorage.getItem("tasks");
     const initialValue = JSON.parse(saved);
     return initialValue || [];
   });
@@ -13,12 +14,12 @@ const App = () => {
   // -------------------------------------------------------
   useEffect(() => {
     // In order to save our data in local storage, we must stringify them first:
-    localStorage.setItem("list", JSON.stringify(tasks));
+    localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
   // -------------------------------------------------------
   const submitHandler = (e) => {
     e.preventDefault();
-    // In case if you wondering : newTask = e.currentTarget.value
+    // In case if you wondering,"newTask" is equal to "e.currentTarget.value"
     if (!newTask) {
       return;
     }
