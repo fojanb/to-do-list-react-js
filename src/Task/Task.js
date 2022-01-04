@@ -1,13 +1,14 @@
 import React from "react";
 
 const Task = (props) => {
-  let { data } = props;
+  let { data, updateData } = props;
   const deleteTask = (e) => {
+    console.log(e.currentTarget.id)
     const parent = e.currentTarget.parentElement;
     parent.style.display = "none";
     const target = data.findIndex((task) => task.id === e.currentTarget.id);
     data.splice(target, 1);
-    console.log(data);
+    updateData(data);
   };
   return (
     <div className="flex items-left">

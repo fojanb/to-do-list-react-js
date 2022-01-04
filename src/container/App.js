@@ -19,7 +19,7 @@ const App = () => {
     }
     setTasks([...tasks, {
       title: newTask,
-      id: Date.now(),
+      id: `${Date.now()}`,
       isDone: false,
     }]);
 
@@ -48,7 +48,7 @@ const App = () => {
             Add
           </button>
         </form>
-        <Task data={tasks}/>
+        <Task data={tasks} updateData={setTasks}/>
       </div>
     </div>
   );
