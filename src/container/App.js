@@ -3,7 +3,12 @@ import Task from "../Task/Task";
 // ---------------------------------------------------------
 const App = () => {
   // -------------------------------------------------------
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState(() => {
+    // getting stored value
+    const saved = localStorage.getItem("list");
+    const initialValue = JSON.parse(saved);
+    return initialValue || [];
+  });
   const [newTask, setNewTask] = useState("");
   // -------------------------------------------------------
   useEffect(() => {
@@ -17,12 +22,14 @@ const App = () => {
     if (!newTask) {
       return;
     }
-    setTasks([...tasks, {
-      title: newTask,
-      id: `${Date.now()}`,
-      isDone: false,
-    }]);
-
+    setTasks([
+      ...tasks,
+      {
+        title: newTask,
+        id: `${Date.now()}`,
+        isDone: false,
+      },
+    ]);
     setNewTask("");
   };
   return (
@@ -48,7 +55,7 @@ const App = () => {
             Add
           </button>
         </form>
-        <Task data={tasks} updateData={setTasks}/>
+        <Task data={tasks} updateData={setTasks} />
       </div>
     </div>
   );
